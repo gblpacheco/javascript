@@ -1,0 +1,93 @@
+<!--Atividade: API "catAPI"
+Nesta atividade, vamos criar uma página que carrega fotos aleatórias de gatinhos sempre que clicamos em um botão.
+
+Utilize a API https://thatcopy.pw/catapi/rest para fazer as chamadas com o método fetch();
+Utilize seus conhecimentos na manipulação do DOM para criar a imagem e ativar o evento de clique do botão! -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Quicksand', sans-serif;
+            height: 100vh;
+            margin: 0;
+            background-color: beige;
+        }
+
+        img {
+            max-width: 600px;
+            border-radius: 30px;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        button {
+            border: 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 16px;
+            background: orangered;
+            color: white;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+        }
+
+        button:hover {
+            background: orange;
+        }
+    </style>
+
+    <title>Just... cats!</title>
+</head>
+
+<body>
+    <main>
+        <h1>Just... cats!</h1>
+        <img id="cat" /><br />
+        <button id="change-cat">Change cat</button>
+    </main>
+
+    <script>
+
+        const BASE_URL = 'http://thatcopy.pw/catapi/rest/';
+        const catBtn = document.getElementById('change-cat');
+        const carImg = document.getElementById('cat');
+
+
+        const getCats = async () => {
+            try{
+                const data = await fetch(BASE_URL);
+                const json = await data.json();
+
+                return json.webpurl;
+            } catch (e) {
+                console.log(e.message);
+            }
+
+            const loadImg = async () => {
+                catImg.src = await getCats();
+            }
+        }
+
+        catBtn.addEventListener('click', loadImg);
+
+        loadImg();
+
+    </script>
+</body>
+
+</html>
