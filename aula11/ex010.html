@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 11</title>
+
+    <style>
+        body {
+            background-color: rgb(230, 228, 228);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <form action="" method="get">
+        Velocidade do carro <input type="number" name="txtvel" id="txtvel">
+        <input type="button" value="Verificar" onclick="calc()">
+    </form>
+    <p>Resultado: <strong id="res"></strong></p>
+
+    <script>
+        function calc(){
+            var txt = document.getElementById('txtvel')
+            var res = document.getElementById('res')
+            var vel = Number(txt.value)
+            res.innerText = `Sua Velocidade é de ${vel}`
+
+            if (vel <=60){
+                res.innerText = `Velocidade permitida.`
+            } else {
+                res.innerText = `Você foi multado!`
+            }
+        }
+    </script>
+</body>
+</html>
