@@ -4,36 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Exercício 03</title>
+    <title>Exercício 04</title>
 </head>
 <body>
-    <header>Vamos Contar</header>
+    <header>Tabuada</header>
 
     <section>
         
-        <div id="formulario" onsubmit="contagem(event)">
+        <div id="formulario" onsubmit="tabuada(event)">
             <form action="" method="get">
-                <div class="espacamento">
-                    <label for="">Início:</label>
-                    <input type="number" name="inicio" id="inicio" title="Início" placeholder="Digite o início" class="tamanho">
+                <div>
+                    <label for="">Número:</label>
+                    <input type="number" name="numero" id="numero" title="Número" placeholder="Digite o Número">
                 </div>
-                <div class="espacamento">
-                    <label for="">Fim:</label>
-                    <input type="number" name="fim" id="fim" title="Fim" placeholder="Digite o fim" class="tamanho">
-                </div>
-                <div class="espacamento">
-                    <label for="">Passo:</label>
-                    <input type="number" name="passo" id="passo" title="Passo" placeholder="Digite o passo" class="tamanho">
-                </div>
-                <div class="espacamento">
+                <div>
                     <button type="submit" title="Submit" id="submit">Enviar</button>
+                </div>
+                <div>
+                    <label for="">Resultado:</label><br>
+                    <textarea name="" id="textarea" title="Resultado"></textarea>
                 </div>
             </form>
         </div>
-
-        <p id="res">Preparando contagem...</p>
-        <!-- <p id="res"></p> -->
-
     </section>
 
     <footer>Curso em Vídeo</footer>

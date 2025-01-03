@@ -1,31 +1,14 @@
-function contagem (event) {
+function tabuada (event) {
     event.preventDefault();
-    var inicio = document.getElementById('inicio').value;
-    var fim = document.getElementById('fim').value;
-    var passo = document.getElementById('passo').value;
-    var res = document.getElementById('res');
+    var numero = document.getElementById('numero').value;
+    var res = document.getElementById('textarea');
 
-    if (inicio.length ==  0 || fim.length == 0 || passo.length == 0) {
-        res.innerHTML = 'Impossível contar!';
-        alert('ERRO! Faltam dados.');
+    if (numero.length == 0 ) {
+        alert('Por favor, digite um número!');
     } else {
-        res.innerHTML = 'Contando: <br>';
-        inicio = Number(inicio);
-        fim = Number(fim);
-        passo = Number(passo);
-        if (passo <= 0) {
-            alert('Passo inválido! Considerando passo 1.');
-            passo = 1;
+        res.innerHTML = '';
+        for (var i = 1; i <= 10; i++) {
+            res.innerHTML += `${numero} x ${i} = ${numero * i} \n`;
         }
-        if (inicio < fim) {
-            for (var i = inicio; i <= fim; i += passo) {
-                res.innerHTML += i + ' \u{1F449} ';
-            }
-        } else {
-            for (var i = inicio; i >= fim; i -= passo) {
-                res.innerHTML += i + ' \u{1F449} ';
-            }
-        }
-        } 
-    res.innerHTML += '\u{1F3C1}';
+    }
 }

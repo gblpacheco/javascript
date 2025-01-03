@@ -30,16 +30,6 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.349);
 }
 
-.espacamento {
-    display: flex;
-    padding: 5px;
-    width: 250px;
-}
-
-.tamanho {
-    width: 100%;
-}
-
 #submit {
     padding: 8px;
     background-color: rgb(73, 116, 196);
@@ -51,6 +41,11 @@ section {
 
 #submit:hover {
     background-color: rgb(1, 1, 187);
+}
+
+#textarea {
+    height: 174px;
+    width: 175px;
 }
 
 p {
