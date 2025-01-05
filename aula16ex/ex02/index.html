@@ -10,23 +10,24 @@
     <header>Analisador de Números</header>
 
     <section>
-        
-        <div id="formulario" onsubmit="calculo(event)">
-            <form action="" method="get">
+        <!-- onsubmit="adicionar(event)" -->
+        <div id="formulario" >
+            <form>
                 <div>
                     <label for="">Número (entre 1 e 100):</label>
-                    <input type="number" name="numero" id="numero" title="Número" placeholder="Digite o Número">
+                    <input type="number" name="number" id="number" title="Número" placeholder="Digite um Número">
                 </div>
                 <div class="padding">
-                    <button type="submit" title="Submit" class="submit" id="submit">Enviar</button>
+                    <button type="button" title="Submit" class="submit" id="submit" onclick="adicionar()">Enviar</button>
                 </div>
                 <div>
                     <label for="">Resultado:</label><br>
-                    <textarea name="" id="textarea" title="Resultado"></textarea>
+                    <select name="textarea" id="textarea" title="Resultado" size="6"></select>
                 </div>
                 <div class="padding">
-                    <button type="submit" title="Submit" class="submit" id="calcular">Calcular</button>
+                    <button type="button" title="Calcular" class="submit" id="calc" onclick="calcular()">Calcular</button>
                 </div>
+                <p id="res">Aqui será mostrado o resultado.</p>
             </form>
         </div>
     </section>
